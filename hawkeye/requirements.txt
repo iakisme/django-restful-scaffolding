@@ -1,0 +1,15 @@
+Django==1.11.3
+django-filter==1.0.4
+django-guardian==1.4.9
+django-redis==4.8.0
+djangorestframework==3.6.3
+djangorestframework-bulk==0.2.1
+djangorestframework-filters==0.10.1
+djangorestframework-jwt==1.11.0
+celery==4.0.2
+channels==1.1.6
+psycopg2==2.7.1
+asgi-redis==1.4.2
+rest-condition==1.0.3
+pycrypto==2.6.1
+Pillow==4.2.0
