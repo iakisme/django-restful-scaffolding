@@ -26,8 +26,6 @@ from api.v1.auth.serializers import UserSerializer, UserGroupSerializer, \
     PermissionSerializer, UserObjectPermissionSerializer
 from authx.permissions import IsAdminUser, IsSuperUser
 from authx.models import User
-from common.yunquAuthorization import verify, prepare_mac_str
-from common.yunquAuthorizationUtil import LICENSE_FILE, get_lisence_info
 import time
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
@@ -36,7 +34,7 @@ jwt_response_payload_handler = api_settings.JWT_RESPONSE_PAYLOAD_HANDLER
 
 @api_view(['GET'])
 def test(request):
-    time.sleep(10000)
+    request.session['1'] = '1'
     return Response({'msg': 'v1 test'})
 
 
@@ -155,46 +153,4 @@ class UserObjectPermissionViewSet(ModelViewSet):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-@api_view(['GET','POST'])
-def grantYunquAuthorization(request):
-    if request.method =='GET':
-        try:
-            with open(LICENSE_FILE) as data_file:
-                data = json.load(data_file)
-        except Exception as e:
-            data={}
 
-        product_key =data.get('product_key','')
-        json_data = {
-            'client_token': smart_text(base64.b64encode(smart_bytes(prepare_mac_str()))),
-            'product_key': product_key
-        }
-        return Response(json_data, status=status.HTTP_200_OK)
-    else:
-        data = request.data
-        if 'product_code' not in data:
-            return Response({'error_message': 'product_code is required'}, status=status.HTTP_400_BAD_REQUEST)
-        product_code = data['product_code']
-        data['signature'] = product_code[:172]
-        json_obj = json.loads(smart_text(base64.b64decode(product_code[172:])))
-        expiry_date = datetime.strptime(json_obj['expiry_date'], "%Y%m%d")
-        if expiry_date < datetime.today():
-            return Response({'error_message': 'Product code expired.'}, status=status.HTTP_400_BAD_REQUEST)
-        issue_date = datetime.strptime(json_obj['issue_date'], "%Y%m%d")
-        if datetime.today() < issue_date:
-            return Response({'error_message': 'System time invalid.'}, status=status.HTTP_400_BAD_REQUEST)
-        data.update(json_obj)
-        if not verify(**data):
-            return Response({'error_message': 'Product code is invalid'}, status=status.HTTP_400_BAD_REQUEST)
-
-        with open(LICENSE_FILE, 'w') as outfile:
-            json.dump(data, outfile)
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-@api_view(['GET'])
-def license_info(request):
-    json_data = get_lisence_info()
-    json_data['issue_date'] = datetime.strptime(json_data['issue_date'], "%Y%m%d").strftime('%Y-%m-%d') if json_data['issue_date'] else ''
-    json_data['expiry_date'] = datetime.strptime(json_data['expiry_date'], "%Y%m%d").strftime('%Y-%m-%d') if json_data['expiry_date'] else ''
-    return Response(json_data, status=status.HTTP_200_OK)

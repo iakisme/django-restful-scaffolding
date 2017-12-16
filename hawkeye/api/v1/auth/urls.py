@@ -15,7 +15,5 @@ urlpatterns = [
     url(r'^token/verify/$', views.verify_jwt_token),
     url(r'^register/$', views.register),
     url(r'^login/$', views.login),
-    url(r'^grant_license/$', views.grantYunquAuthorization),
-    url(r'^license_info/$', views.license_info),
     url(r'^test/$', views.test),
 ]

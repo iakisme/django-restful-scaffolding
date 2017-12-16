@@ -40,12 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    'channels',
     'guardian',
     #apps
     'authx',
     'common',
     'api',
+    'monitor',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'hawkeye.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "hawkeye",
+        'NAME': "onedream",
         'USER': "yunqu",
         'PASSWORD': "yunqu",
         'HOST': "127.0.0.1",
@@ -97,7 +97,7 @@ DATABASES = {
 # please DO redefine `BROKER_URL` in ${env}.py if above properties change
 REDIS_PORT = 6379
 REDIS_HOST = '127.0.0.1'
-REDIS_PASSWORD = 'Yunqu_Redis_Pass'
+REDIS_PASSWORD = ''
 REDIS_MULE_DB = 0
 
 REDIS_CONFIG = {
@@ -305,16 +305,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', # this is default
     'guardian.backends.ObjectPermissionBackend',
 )
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgi_redis.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [os.environ.get('REDIS_URL', REDIS_CONN_STR)],
-        },
-        "ROUTING": "hawkeye.routing.channel_routing",
-    },
-}
 
 BASE_URL = "http://127.0.0.1:8080/"
 

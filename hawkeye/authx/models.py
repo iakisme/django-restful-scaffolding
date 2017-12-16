@@ -58,10 +58,11 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin, CoreModel):
         abstract = True
 
 
+
 class User(AbstractUser):
     phone_number = models.CharField(max_length=30, null=True, blank=True)
     email = models.CharField(max_length=30, null=True, blank=True)
-    owner = models.ForeignKey('User', null=True, blank=True)
+    owner = models.ForeignKey('User', null=True, blank=True,on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'auth_user'
