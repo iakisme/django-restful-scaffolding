@@ -25,7 +25,7 @@ class Dream(CoreModel):
     age = models.IntegerField(null=True)
     person_type = models.CharField(max_length=100, blank=True, null=True)
     want = models.CharField(max_length=1000, blank=True, null=True)
-    reason = models.DateTimeField(auto_now=True)
+    reason = models.CharField(max_length=1000, blank=True, null=True)
     local = models.CharField(max_length=100, blank=True, null=True)
     is_claimed = models.BooleanField(default=False)
     contact_person = models.ForeignKey(get_user_model(), null=True, blank=True, on_delete=models.CASCADE)
