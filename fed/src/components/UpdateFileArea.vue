@@ -1,12 +1,19 @@
 <template lang="html">
-  <div class="">
-    <h1>a</h1>
-    <input type="file" name="" value="">
-  </div>
+  <Upload
+    multiple
+    type="drag"
+    action="/api/v1/monitor/upload_file/"
+    name="template">
+    <div style="padding: 20px 0">
+      <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
+      <p>Click or drag files here to upload</p>
+    </div>
+  </Upload>
 </template>
 
 <script>
 import axios from 'axios'
+import 'iview/dist/styles/iview.css'
 
 export default {
   name: 'UpdateFileArea',

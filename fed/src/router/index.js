@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import ClaimArea from '@/components/ClaimArea'
-import LoginArea from '@/components/LoginArea'
-import UpdateFileArea from '@/components/UpdateFileArea'
+const Main = () => import('@/components/Main')
+const ClaimArea = () => import('@/components/ClaimArea')
+const LoginArea = () => import('@/components/LoginArea')
+const UpdateFileArea = () => import('@/components/UpdateFileArea')
 
 Vue.use(Router)
 
@@ -11,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Main',
+      component: Main
     },
     {
       path: '/claim-area',
