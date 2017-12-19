@@ -69,7 +69,6 @@ def validate_code(request, phone_num, code):
     return False
 
 
-@login_required
 @api_view(['POST', ])
 @parser_classes((MultiPartParser,))
 def upload_file(request):
