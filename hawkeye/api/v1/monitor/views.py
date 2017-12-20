@@ -43,8 +43,11 @@ class DreamViewSet(BulkModelViewSet):
         donor.save()
         dream.donor.add(donor)
         dream.save()
-
-        yunpian_send_message(dream, donor_name, phone_num)
+        message = f'【万人圆梦】孩子的愿望:{dream.title}被{donor_name}认领，联系方式:{phone_num}'
+        message_to_donor = f'【万人圆梦】尊敬的{donor_name}，感谢您参与“万人圆梦”，工作人员将会尽快与您取得联系。' \
+                           f'您也可以直接与工作人员联系，联系人：{dream.contact_person.fullname}，联系人：{dream.contact_person.phone_number}'
+        yunpian_send_message(phone_num, message_to_donor)
+        yunpian_send_message(dream.contact_person.phone_number, message)
         return Response(status=status.HTTP_200_OK)
 
 
@@ -120,15 +123,17 @@ def yunpian_send_code(code, phone_num):
     # 短信:clnt.sms() 账户:clnt.user() 签名:clnt.sign() 模版:clnt.tpl() 语音:clnt.voice() 流量:clnt.flow()
 
 
-def yunpian_send_message(dream, donor_name, phone_num):
+def yunpian_send_message(send_to, message):
     from yunpian_python_sdk.model import constant as YC
     from yunpian_python_sdk.ypclient import YunpianClient
-    if not dream.contact_person or not dream.contact_person.phone_number:
+    if not message or not send_to:
         print('没有通知老师，因为联系人为空')
         return
     # 初始化client,apikey作为所有请求的默认值
     clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
-    param = {YC.MOBILE: dream.contact_person.phone_number,
-             YC.TEXT: f'【万人圆梦】孩子的愿望:{dream.title}被{donor_name}认领，联系方式:{phone_num}'}
+    param = {
+        YC.MOBILE: send_to,
+        YC.TEXT: message
+    }
     r = clnt.sms().single_send(param)
     return r.code()
