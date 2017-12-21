@@ -5,13 +5,13 @@ from rest_condition import Or
 from rest_framework import status
 from rest_framework.decorators import detail_route, api_view, parser_classes
 from rest_framework.parsers import FileUploadParser, FormParser, MultiPartParser, JSONParser
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework_bulk.generics import BulkModelViewSet
 
 from api.v1.monitor.filtersets import DreamFilterSet
 from api.v1.monitor.serializers import DreamSerializer
-from authx.permissions import IsAdminUser
+from authx.permissions import IsAdminUser, IsSuperUser
 from monitor.models import Dream, Donor
 import xlrd
 
@@ -20,8 +20,18 @@ class DreamViewSet(BulkModelViewSet):
     queryset = Dream.objects.all()
     serializer_class = DreamSerializer
     filter_class = DreamFilterSet
-    permission_classes = (Or(IsAdminUser, IsAuthenticated),)
+    # permission_classes = (Or(IsAdminUser, IsAuthenticated),)
     parser_classes = (MultiPartParser,)
+
+    def get_permissions(self):
+        if self.request.method == 'DELETE':
+            return [IsSuperUser()]
+        if self.request.method == 'POST':
+            return [IsSuperUser()]
+        if self.request.method == 'PATCH':
+            return [IsSuperUser()]
+        else:
+            return [AllowAny()]
 
     @detail_route(
         methods=['POST'],

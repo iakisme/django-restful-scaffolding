@@ -7,7 +7,7 @@ from rest_framework import serializers
 
 
 class DreamSerializer(BulkSerializerMixin, DynamicFieldsModelSerializer):
-    image_url = serializers.SerializerMethodField()
+    image_url = serializers.SerializerMethodField(allow_null=True)
 
     class Meta:
         model = Dream
