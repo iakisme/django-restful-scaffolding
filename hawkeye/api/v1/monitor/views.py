@@ -36,6 +36,7 @@ class DreamViewSet(BulkModelViewSet):
     @detail_route(
         methods=['POST'],
         url_path='claim',
+        parser_classes=[JSONParser, ]
     )
     def claim(self, request, *args, **kwargs):
         donor_name = request.data.get('donor_name')
