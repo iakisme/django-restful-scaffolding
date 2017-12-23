@@ -10,6 +10,6 @@ router.register('dream', DreamViewSet)
 urlpatterns = (
     url(r'^', include(router.urls)),
     url(r'^send_code/$', views.send_code),
-    url(r'^validate_code/$', views.validate_code),
+    #url(r'^validate_code/$', views.validate_code),
     url(r'^upload_file/$', views.upload_file),
 )

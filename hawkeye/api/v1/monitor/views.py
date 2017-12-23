@@ -1,7 +1,4 @@
 from random import choice
-
-from django.contrib.auth.decorators import login_required
-from rest_condition import Or
 from rest_framework import status
 from rest_framework.decorators import detail_route, api_view, parser_classes
 from rest_framework.parsers import FileUploadParser, FormParser, MultiPartParser, JSONParser
@@ -55,9 +52,14 @@ class DreamViewSet(BulkModelViewSet):
         dream.donor.add(donor)
         dream.save()
         message = f'【万人圆梦】孩子的愿望:{dream.title}被{donor_name}认领，联系方式:{phone_num}'
+        full_name = dream.contact_person.fullname if dream.contact_person else ''
+        phone_number = dream.contact_person.phone_number if dream.contact_person else ''
+
         message_to_donor = f'【万人圆梦】尊敬的{donor_name}，感谢您参与“万人圆梦”，工作人员将会尽快与您取得联系。' \
-                           f'您也可以直接与工作人员联系，联系人：{dream.contact_person.fullname}，联系人：{dream.contact_person.phone_number}'
+                           f'您也可以直接与工作人员联系，联系人：{full_name}，联系人：{phone_number}'
         yunpian_send_message(phone_num, message_to_donor)
+        if not dream.contact_person:
+            return Response(status=status.HTTP_200_OK)
         yunpian_send_message(dream.contact_person.phone_number, message)
         return Response(status=status.HTTP_200_OK)
 
@@ -74,7 +76,6 @@ def send_code(request):
     return Response(status=status.HTTP_200_OK)
 
 
-@api_view(['POST', ])
 def validate_code(request, phone_num, code):
     if not phone_num or not code:
         return False
