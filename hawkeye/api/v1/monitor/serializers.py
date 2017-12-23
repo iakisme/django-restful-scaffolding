@@ -1,3 +1,4 @@
+from rest_framework.fields import SerializerMethodField
 from rest_framework_bulk.serializers import BulkSerializerMixin, \
     BulkListSerializer
 
@@ -8,6 +9,10 @@ from rest_framework import serializers
 
 class DreamSerializer(BulkSerializerMixin, DynamicFieldsModelSerializer):
     image_url = serializers.SerializerMethodField(allow_null=True)
+    donor_num = SerializerMethodField()
+
+    def get_donor_num(self, obj):
+        return len(obj.donor.all()) if obj.donor else 0
 
     class Meta:
         model = Dream
