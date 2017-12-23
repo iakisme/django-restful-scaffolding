@@ -26,7 +26,7 @@ class DreamViewSet(BulkModelViewSet):
     def get_permissions(self):
         if self.request.method == 'DELETE':
             return [IsSuperUser()]
-        if self.request.method == 'POST':
+        if self.request.method == 'POST' and self.action != 'claim':
             return [IsSuperUser()]
         if self.request.method == 'PATCH':
             return [IsSuperUser()]
