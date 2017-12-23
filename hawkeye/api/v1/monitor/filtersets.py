@@ -9,6 +9,7 @@ class DreamFilterSet(filters.FilterSet):
     class Meta:
         model = Dream
         fields = {
-            'is_claimed': ('exact', 'in',),
-            'local': ('exact', 'in', ),
+            'is_claimed': ('exact', 'in', 'icontains'),
+            'local': ('exact', 'in', 'icontains'),
+            'title': ('icontains',)
         }
