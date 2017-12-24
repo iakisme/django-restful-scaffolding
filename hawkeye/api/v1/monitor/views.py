@@ -94,7 +94,7 @@ def upload_image(request):
     try:
         file = request.FILES.get('image')
         file_name = scramble_uploaded_filename('1', file.name)
-        img = Image.open(file).save(f'{file_name}')
+        img = Image.open(file).save(f'static/{file_name}')
     except Exception as e:
         return Response({"error_message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     return Response({"image_url": file_name}, status=status.HTTP_200_OK)

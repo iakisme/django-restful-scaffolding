@@ -15,7 +15,7 @@ def scramble_uploaded_filename(instance, filename):
     :return:
     """
     extension = filename.split(".")[-1]
-    return "static/static/photos/{}.{}".format(uuid.uuid4(), extension)
+    return "static/photos/{}.{}".format(uuid.uuid4(), extension)
 
 
 class Dream(CoreModel):
