@@ -89,6 +89,7 @@ def validate_code(request, phone_num, code):
 
 @api_view(['POST', ])
 @parser_classes((MultiPartParser,))
+@login_required
 def upload_image(request):
     try:
         file = request.FILES.get('image')
@@ -101,6 +102,7 @@ def upload_image(request):
 
 @api_view(['POST', ])
 @parser_classes((MultiPartParser,))
+@login_required
 def upload_file(request):
     file = request.FILES.get('template')
     wb = xlrd.open_workbook(file_contents=file.read())
