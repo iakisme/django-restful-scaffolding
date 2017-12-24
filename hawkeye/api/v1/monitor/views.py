@@ -1,4 +1,6 @@
 from random import choice
+
+from django.contrib.auth.decorators import login_required
 from rest_framework import status
 from rest_framework.decorators import detail_route, api_view, parser_classes
 from rest_framework.parsers import FileUploadParser, FormParser, MultiPartParser, JSONParser
@@ -19,7 +21,7 @@ class DreamViewSet(BulkModelViewSet):
     serializer_class = DreamSerializer
     filter_class = DreamFilterSet
     # permission_classes = (Or(IsAdminUser, IsAuthenticated),)
-    parser_classes = (MultiPartParser,)
+    # parser_classes = (JSONParser,)
 
     def get_permissions(self):
         if self.request.method == 'DELETE':
