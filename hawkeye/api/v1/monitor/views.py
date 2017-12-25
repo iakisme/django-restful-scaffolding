@@ -20,6 +20,7 @@ class DreamViewSet(BulkModelViewSet):
     queryset = Dream.objects.all()
     serializer_class = DreamSerializer
     filter_class = DreamFilterSet
+
     # permission_classes = (Or(IsAdminUser, IsAuthenticated),)
     # parser_classes = (JSONParser,)
 
@@ -54,10 +55,10 @@ class DreamViewSet(BulkModelViewSet):
         donor.save()
         dream.donor.add(donor)
         dream.save()
-        message = f'【万人圆梦】孩子的愿望:{dream.title}被{donor_name}认领，联系方式:{phone_num}'
-        full_name = dream.contact_person.fullname if dream.contact_person else ''
-        phone_number = dream.contact_person.phone_number if dream.contact_person else ''
 
+        message = f'【万人圆梦】孩子的愿望:{dream.title}被{donor_name}认领，联系方式:{phone_num}'
+        full_name = dream.contact_name
+        phone_number = dream.contact_phone
         message_to_donor = f'【万人圆梦】尊敬的{donor_name}，感谢您参与“万人圆梦”，工作人员将会尽快与您取得联系。' \
                            f'您也可以直接与工作人员联系，联系人：{full_name}，联系电话：{phone_number}'
         yunpian_send_message(phone_num, message_to_donor)
@@ -102,7 +103,6 @@ def upload_image(request):
 
 @api_view(['POST', ])
 @parser_classes((MultiPartParser,))
-@login_required
 def upload_file(request):
     file = request.FILES.get('template')
     wb = xlrd.open_workbook(file_contents=file.read())
@@ -111,14 +111,15 @@ def upload_file(request):
     for rownum in range(1, wb_sheet.nrows):
         row = wb_sheet.row_values(rownum)
         dream = Dream(
-            title=row[0],
+            local=row[0],
             person_name=row[1],
-            age=row[2],
-            person_type=row[3],
-            want=row[4],
-            reason=row[5],
-            local=row[6],
-            contact_person=request.user
+            sex=row[2],
+            age=row[3],
+            person_type=row[4],
+            contact_name=row[5],
+            contact_phone=row[6],
+            title=row[7],
+            reason=row[8],
         )
         dream_list.append(dream)
     Dream.objects.bulk_create(dream_list)

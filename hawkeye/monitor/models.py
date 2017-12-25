@@ -21,15 +21,19 @@ def scramble_uploaded_filename(instance, filename):
 class Dream(CoreModel):
     # image = models.ImageField(upload_to=scramble_uploaded_filename, null=True, blank=True, max_length=255,default='default')
     image_url = models.CharField(max_length=1000, blank=True, null=True)
+
     title = models.CharField(max_length=1000, blank=True, null=True)
     person_name = models.CharField(max_length=100, blank=True, null=True)
     age = models.IntegerField(null=True)
+    sex = models.CharField(max_length=10, blank=True, null=True)
     person_type = models.CharField(max_length=100, blank=True, null=True)
-    want = models.CharField(max_length=1000, blank=True, null=True)
     reason = models.CharField(max_length=1000, blank=True, null=True)
     local = models.CharField(max_length=100, blank=True, null=True)
+    contact_name = models.CharField(max_length=100, blank=True, null=True)
+    contact_phone = models.CharField(max_length=100, blank=True, null=True)
+
+    # contact_person = models.ForeignKey(get_user_model(), null=True, blank=True, on_delete=models.CASCADE)
     is_claimed = models.BooleanField(default=False)
-    contact_person = models.ForeignKey(get_user_model(), null=True, blank=True, on_delete=models.CASCADE)
     donor = models.ManyToManyField('Donor', null=True, blank=True)
 
 

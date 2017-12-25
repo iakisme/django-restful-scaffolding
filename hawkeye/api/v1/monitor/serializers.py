@@ -10,19 +10,18 @@ from rest_framework import serializers
 class DreamSerializer(BulkSerializerMixin, DynamicFieldsModelSerializer):
     # image_url = serializers.SerializerMethodField(allow_null=True)
     donor_num = SerializerMethodField()
-    contact_person = SerializerMethodField()
     # def get_image_url(self, dream):
     #     photo_url = dream.image.url
     #     return photo_url
+    donors = SerializerMethodField()
 
     def get_donor_num(self, obj):
         return len(obj.donor.all()) if obj.donor else 0
 
-    def get_contact_person(self, obj):
-        if obj.contact_person:
-            return obj.contact_person.fullname
-        else:
-            return ''
+    def get_donors(self, obj):
+        donors = obj.donor.all().values_list('name','phone')
+        return donors
+
     class Meta:
         model = Dream
         list_serializer_class = BulkListSerializer
