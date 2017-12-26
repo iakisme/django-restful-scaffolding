@@ -1,6 +1,9 @@
+import io
 from random import choice
 
+import xlsxwriter
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.decorators import detail_route, api_view, parser_classes
 from rest_framework.parsers import FileUploadParser, FormParser, MultiPartParser, JSONParser
@@ -55,8 +58,9 @@ class DreamViewSet(BulkModelViewSet):
         donor.save()
         dream.donor.add(donor)
         dream.save()
-
-        message = f'【万人圆梦】孩子的愿望:{dream.title}被{donor_name}认领，联系方式:{phone_num}'
+        title = dream.title
+        title = title[:8]
+        message = f'【万人圆梦】孩子的愿望:{title}被{donor_name}认领，联系方式:{phone_num}'
         full_name = dream.contact_name
         phone_number = dream.contact_phone
         message_to_donor = f'【万人圆梦】尊敬的{donor_name}，感谢您参与“万人圆梦”，工作人员将会尽快与您取得联系。' \
@@ -126,44 +130,79 @@ def upload_file(request):
     return Response(status=status.HTTP_200_OK)
 
 
-def generate_code():
-    """
-    生成四位数字的验证码
-    :return:
-    """
-    seeds = "1234567890"
-    random_str = []
-    for i in range(4):
-        random_str.append(choice(seeds))
-    return "".join(random_str)
+@api_view(['GET', ])
+def export_file(request):
+    output = io.BytesIO()
+    workbook = xlsxwriter.Workbook(output, {'in_memory': True})
+    worksheet = workbook.add_worksheet()
+
+    worksheet.write(0, 0, '所在地')
+    worksheet.write(0, 1, '姓名')
+    worksheet.write(0, 2, '性别')
+    worksheet.write(0, 3, '年龄')
+    worksheet.write(0, 4, '贫困属性')
+    worksheet.write(0, 5, '对接人')
+    worksheet.write(0, 6, '联系电话')
+    worksheet.write(0, 7, '梦享公益包')
+    worksheet.write(0, 8, '梦享理由')
+
+    dream_list = list(Dream.objects.filter(is_claimed=False))
+    for i, dream in enumerate(dream_list):
+        worksheet.write(i+1, 0, dream.local)
+        worksheet.write(i+1, 1, dream.person_name)
+        worksheet.write(i+1, 2, dream.sex)
+        worksheet.write(i+1, 3, dream.age)
+        worksheet.write(i+1, 4, dream.person_type)
+        worksheet.write(i+1, 5, dream.contact_name)
+        worksheet.write(i+1, 6, dream.contact_phone)
+        worksheet.write(i+1, 7, dream.title)
+        worksheet.write(i+1, 8, dream.reason)
+
+        workbook.close()
+        output.seek(0)
+
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="test.xlsx"'
+        response.write(output.read())
+        # response.write(output.read())
+        return response
+
+    def generate_code():
+        """
+        生成四位数字的验证码
+        :return:
+        """
+        seeds = "1234567890"
+        random_str = []
+        for i in range(4):
+            random_str.append(choice(seeds))
+        return "".join(random_str)
+
+    def yunpian_send_code(code, phone_num):
+        from yunpian_python_sdk.model import constant as YC
+        from yunpian_python_sdk.ypclient import YunpianClient
+
+        # 初始化client,apikey作为所有请求的默认值
+        clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
+        param = {YC.MOBILE: phone_num, YC.TEXT: f'【万人圆梦】您的验证码是{code}'}
+        r = clnt.sms().single_send(param)
+        return r.code()
 
 
-def yunpian_send_code(code, phone_num):
-    from yunpian_python_sdk.model import constant as YC
-    from yunpian_python_sdk.ypclient import YunpianClient
+        # 获取返回结果, 返回码:r.code(),返回码描述:r.msg(),API结果:r.data(),其他说明:r.detail(),调用异常:r.exception()
+        # 短信:clnt.sms() 账户:clnt.user() 签名:clnt.sign() 模版:clnt.tpl() 语音:clnt.voice() 流量:clnt.flow()
 
-    # 初始化client,apikey作为所有请求的默认值
-    clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
-    param = {YC.MOBILE: phone_num, YC.TEXT: f'【万人圆梦】您的验证码是{code}'}
-    r = clnt.sms().single_send(param)
-    return r.code()
-
-
-    # 获取返回结果, 返回码:r.code(),返回码描述:r.msg(),API结果:r.data(),其他说明:r.detail(),调用异常:r.exception()
-    # 短信:clnt.sms() 账户:clnt.user() 签名:clnt.sign() 模版:clnt.tpl() 语音:clnt.voice() 流量:clnt.flow()
-
-
-def yunpian_send_message(send_to, message):
-    from yunpian_python_sdk.model import constant as YC
-    from yunpian_python_sdk.ypclient import YunpianClient
-    if not message or not send_to:
-        print('没有通知老师，因为联系人为空')
-        return
-    # 初始化client,apikey作为所有请求的默认值
-    clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
-    param = {
-        YC.MOBILE: send_to,
-        YC.TEXT: message
-    }
-    r = clnt.sms().single_send(param)
-    return r.code()
+    def yunpian_send_message(send_to, message):
+        from yunpian_python_sdk.model import constant as YC
+        from yunpian_python_sdk.ypclient import YunpianClient
+        if not message or not send_to:
+            print('没有通知老师，因为联系人为空')
+            return
+        # 初始化client,apikey作为所有请求的默认值
+        clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
+        param = {
+            YC.MOBILE: send_to,
+            YC.TEXT: message
+        }
+        r = clnt.sms().single_send(param)
+        return r.code()

@@ -28,3 +28,4 @@ six==1.11.0
 urllib3==1.22
 xlrd==1.1.0
 yunpian-python-sdk==1.0.0
+xlsxwriter
