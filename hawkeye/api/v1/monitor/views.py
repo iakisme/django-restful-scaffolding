@@ -167,42 +167,42 @@ def export_file(request):
         # response.write(output.read())
         return response
 
-    def generate_code():
-        """
-        生成四位数字的验证码
-        :return:
-        """
-        seeds = "1234567890"
-        random_str = []
-        for i in range(4):
-            random_str.append(choice(seeds))
-        return "".join(random_str)
+def generate_code():
+    """
+    生成四位数字的验证码
+    :return:
+    """
+    seeds = "1234567890"
+    random_str = []
+    for i in range(4):
+        random_str.append(choice(seeds))
+    return "".join(random_str)
 
-    def yunpian_send_code(code, phone_num):
-        from yunpian_python_sdk.model import constant as YC
-        from yunpian_python_sdk.ypclient import YunpianClient
+def yunpian_send_code(code, phone_num):
+    from yunpian_python_sdk.model import constant as YC
+    from yunpian_python_sdk.ypclient import YunpianClient
 
-        # 初始化client,apikey作为所有请求的默认值
-        clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
-        param = {YC.MOBILE: phone_num, YC.TEXT: f'【万人圆梦】您的验证码是{code}'}
-        r = clnt.sms().single_send(param)
-        return r.code()
+    # 初始化client,apikey作为所有请求的默认值
+    clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
+    param = {YC.MOBILE: phone_num, YC.TEXT: f'【万人圆梦】您的验证码是{code}'}
+    r = clnt.sms().single_send(param)
+    return r.code()
 
 
-        # 获取返回结果, 返回码:r.code(),返回码描述:r.msg(),API结果:r.data(),其他说明:r.detail(),调用异常:r.exception()
-        # 短信:clnt.sms() 账户:clnt.user() 签名:clnt.sign() 模版:clnt.tpl() 语音:clnt.voice() 流量:clnt.flow()
+    # 获取返回结果, 返回码:r.code(),返回码描述:r.msg(),API结果:r.data(),其他说明:r.detail(),调用异常:r.exception()
+    # 短信:clnt.sms() 账户:clnt.user() 签名:clnt.sign() 模版:clnt.tpl() 语音:clnt.voice() 流量:clnt.flow()
 
-    def yunpian_send_message(send_to, message):
-        from yunpian_python_sdk.model import constant as YC
-        from yunpian_python_sdk.ypclient import YunpianClient
-        if not message or not send_to:
-            print('没有通知老师，因为联系人为空')
-            return
-        # 初始化client,apikey作为所有请求的默认值
-        clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
-        param = {
-            YC.MOBILE: send_to,
-            YC.TEXT: message
-        }
-        r = clnt.sms().single_send(param)
-        return r.code()
+def yunpian_send_message(send_to, message):
+    from yunpian_python_sdk.model import constant as YC
+    from yunpian_python_sdk.ypclient import YunpianClient
+    if not message or not send_to:
+        print('没有通知老师，因为联系人为空')
+        return
+    # 初始化client,apikey作为所有请求的默认值
+    clnt = YunpianClient('6e3b47b00f792b1067d05a921b1c1d33')
+    param = {
+        YC.MOBILE: send_to,
+        YC.TEXT: message
+    }
+    r = clnt.sms().single_send(param)
+    return r.code()
