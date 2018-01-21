@@ -65,7 +65,7 @@ class DreamViewSet(BulkModelViewSet):
         message = f'【万人圆梦】孩子的愿望:{title}被{donor_name}认领，联系方式:{phone_num}'
         full_name = dream.contact_name
         phone_number = dream.contact_phone
-        message_to_donor = f'【万人圆梦】尊敬的{donor_name}，感谢您参与“万人圆梦”，工作人员将会尽快与您取得联系。' \
+        message_to_donor = f'【万人圆梦】尊敬的{donor_name}，感谢您参与“2018宁波市青少年万人圆梦行动”，工作人员将会尽快与您取得联系。' \
                            f'您也可以直接与工作人员联系，联系人：{full_name}，联系电话：{phone_number}'
         yunpian_send_message(phone_num, message_to_donor)
         if not dream.contact_phone:

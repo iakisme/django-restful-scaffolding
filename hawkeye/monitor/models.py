@@ -20,7 +20,7 @@ def scramble_uploaded_filename(instance, filename):
 
 class Dream(CoreModel):
     # image = models.ImageField(upload_to=scramble_uploaded_filename, null=True, blank=True, max_length=255,default='default')
-    image_url = models.CharField(max_length=1000, blank=True, null=True)
+    image_url = models.CharField(max_length=1000, blank=True, null=True, default='static/photos/default_img.jpg')
 
     title = models.CharField(max_length=1000, blank=True, null=True)
     person_name = models.CharField(max_length=100, blank=True, null=True)
