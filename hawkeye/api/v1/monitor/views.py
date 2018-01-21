@@ -46,12 +46,14 @@ class DreamViewSet(BulkModelViewSet):
         donor_name = request.data.get('donor_name')
         phone_num = request.data.get('phone_num')
         code = request.data.get('code')
+        dream = self.get_object()
+        if dream.is_claimed is True:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
         if not donor_name or not phone_num or not code:
             return Response(status=status.HTTP_400_BAD_REQUEST)
         is_validated = validate_code(request, phone_num, code)
         if not is_validated:
             return Response(status=status.HTTP_400_BAD_REQUEST)
-        dream = self.queryset[0]
         dream.is_claimed = True
 
         donor = Donor(name=donor_name, phone=phone_num)
