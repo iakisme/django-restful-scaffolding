@@ -188,7 +188,10 @@ REST_FRAMEWORK = {
     #'PAGINATE_BY_PARAM': 'page_size', # this is also in REMOVED_SETTINGS
     'DEFAULT_PARSER_CLASSES': (
         'rest_framework.parsers.JSONParser',
-    )
+    ),
+    'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
+    'DATETIME_INPUT_FORMATS': ["%Y-%m-%d %H:%M:%S", ]
+
 }
 
 QS_JWT_KEY = 'jwt' # for authx.authentication to parse query_params if any jwt
