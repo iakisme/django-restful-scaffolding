@@ -126,3 +126,1305 @@ Traceback (most recent call last):
   File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
     self.field.remote_field.model._meta.object_name,
 ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x105cd4048>": "Dream.contact_person" must be a "User" instance.
+ERROR 2017-12-21 01:47:32,575 exception 25680 123145378160640 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 477, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 395, in initial
+    self.check_permissions(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 328, in check_permissions
+    if not permission.has_permission(request, self):
+AttributeError: 'bool' object has no attribute 'has_permission'
+ERROR 2017-12-21 02:08:19,680 exception 35850 123145563000832 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 18, in get_image_url
+    photo_url = dream.image.url
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/fields/files.py", line 70, in url
+    self._require_file()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/fields/files.py", line 47, in _require_file
+    raise ValueError("The '%s' attribute has no file associated with it." % self.field.name)
+ValueError: The 'image' attribute has no file associated with it.
+ERROR 2017-12-21 02:09:28,138 exception 66586 123145531506688 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 18, in get_image_url
+    photo_url = dream.image.url
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/fields/files.py", line 70, in url
+    self._require_file()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/fields/files.py", line 47, in _require_file
+    raise ValueError("The '%s' attribute has no file associated with it." % self.field.name)
+ValueError: The 'image' attribute has no file associated with it.
+ERROR 2017-12-21 02:10:05,147 exception 67641 123145333854208 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 18, in get_image_url
+    photo_url = dream.image.url
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/fields/files.py", line 70, in url
+    self._require_file()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/fields/files.py", line 47, in _require_file
+    raise ValueError("The '%s' attribute has no file associated with it." % self.field.name)
+ValueError: The 'image' attribute has no file associated with it.
+ERROR 2017-12-21 02:12:47,878 exception 67641 123145333854208 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (e2f0946e-bb24-4bb3-a111-619aefc89a0f, 2017-12-21 02:12:47.832895+00, 2017-12-21 02:12:47.832932+00, null, null, null, null, null, null, f, null, null, #).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework_bulk/drf3/mixins.py", line 29, in create
+    return super(BulkCreateModelMixin, self).create(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 913, in create
+    instance = ModelClass.objects.create(**validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 393, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 1060, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (e2f0946e-bb24-4bb3-a111-619aefc89a0f, 2017-12-21 02:12:47.832895+00, 2017-12-21 02:12:47.832932+00, null, null, null, null, null, null, f, null, null, #).
+
+ERROR 2017-12-21 02:13:10,531 exception 67641 123145333854208 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (0f56a6bf-ae54-4557-818a-799f8cd6da91, 2017-12-21 02:13:10.530256+00, 2017-12-21 02:13:10.53028+00, null, null, null, null, null, null, f, null, null, #).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework_bulk/drf3/mixins.py", line 29, in create
+    return super(BulkCreateModelMixin, self).create(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 913, in create
+    instance = ModelClass.objects.create(**validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 393, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 1060, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (0f56a6bf-ae54-4557-818a-799f8cd6da91, 2017-12-21 02:13:10.530256+00, 2017-12-21 02:13:10.53028+00, null, null, null, null, null, null, f, null, null, #).
+
+ERROR 2017-12-21 02:14:49,844 exception 67641 123145333854208 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (3c96867e-2431-4b1a-8ac7-cd351fd7d28f, 2017-12-21 02:14:49.843139+00, 2017-12-21 02:14:49.843164+00, null, null, 1, null, null, null, f, null, null, #).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework_bulk/drf3/mixins.py", line 29, in create
+    return super(BulkCreateModelMixin, self).create(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 913, in create
+    instance = ModelClass.objects.create(**validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 393, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 1060, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (3c96867e-2431-4b1a-8ac7-cd351fd7d28f, 2017-12-21 02:14:49.843139+00, 2017-12-21 02:14:49.843164+00, null, null, 1, null, null, null, f, null, null, #).
+
+ERROR 2017-12-21 02:15:04,058 exception 67641 123145333854208 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (6df55e0d-2977-4bc0-bd2f-1950b5585649, 2017-12-21 02:15:04.057619+00, 2017-12-21 02:15:04.057643+00, null, null, 1, null, null, null, f, null, null, #).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework_bulk/drf3/mixins.py", line 29, in create
+    return super(BulkCreateModelMixin, self).create(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 913, in create
+    instance = ModelClass.objects.create(**validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 393, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 1060, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (6df55e0d-2977-4bc0-bd2f-1950b5585649, 2017-12-21 02:15:04.057619+00, 2017-12-21 02:15:04.057643+00, null, null, 1, null, null, null, f, null, null, #).
+
+ERROR 2017-12-21 02:15:09,594 exception 67641 123145333854208 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (2eb1af22-02ab-4e8c-9f80-ffb90a008a05, 2017-12-21 02:15:09.593181+00, 2017-12-21 02:15:09.593222+00, null, null, 1, null, null, null, f, null, null, #).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework_bulk/drf3/mixins.py", line 29, in create
+    return super(BulkCreateModelMixin, self).create(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 913, in create
+    instance = ModelClass.objects.create(**validated_data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 393, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/query.py", line 1060, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "reason" violates not-null constraint
+DETAIL:  Failing row contains (2eb1af22-02ab-4e8c-9f80-ffb90a008a05, 2017-12-21 02:15:09.593181+00, 2017-12-21 02:15:09.593222+00, null, null, 1, null, null, null, f, null, null, #).
+
+ERROR 2017-12-23 00:43:44,079 exception 52156 123145482055680 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+TypeError: get_donor_num() takes 1 positional argument but 2 were given
+ERROR 2017-12-23 00:44:52,608 exception 54514 123145437179904 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 15, in get_donor_num
+    return len(self.donor) if self.donor else 0
+AttributeError: 'DreamSerializer' object has no attribute 'donor'
+ERROR 2017-12-23 00:45:34,283 exception 55557 123145573707776 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 15, in get_donor_num
+    return len(obj.donor) if self.donor else 0
+AttributeError: 'DreamSerializer' object has no attribute 'donor'
+ERROR 2017-12-23 00:45:35,925 exception 55557 123145573707776 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 15, in get_donor_num
+    return len(obj.donor) if self.donor else 0
+AttributeError: 'DreamSerializer' object has no attribute 'donor'
+ERROR 2017-12-23 00:46:05,240 exception 56367 123145425076224 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 15, in get_donor_num
+    return len(obj.donor) if obj.donor else 0
+TypeError: object of type 'ManyRelatedManager' has no len()
+ERROR 2017-12-23 03:10:34,833 exception 57705 123145395458048 Internal Server Error: /api/v1/auth/login
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/auth/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2017-12-23 03:10:41,091 exception 57705 123145395458048 Internal Server Error: /api/v1/auth/login
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/auth/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2017-12-23 03:11:49,779 exception 57705 123145395458048 Internal Server Error: /api/v1/auth/users
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/auth/users/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2017-12-23 03:12:06,994 exception 57705 123145395458048 Internal Server Error: /api/v1/auth/users
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/auth/users/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2017-12-23 03:13:06,292 exception 57705 123145395458048 Internal Server Error: /api/v1/auth/users
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/auth/users/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2017-12-23 03:14:38,619 exception 45075 123145573044224 Internal Server Error: /api/v1/auth/users
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/auth/users/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2017-12-23 03:14:44,744 exception 45075 123145573044224 Internal Server Error: /api/v1/auth/users/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/auth/views.py", line 98, in create
+    self.perform_create(serializer)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/auth/serializers.py", line 21, in create
+    user.is_superuser = validated_data['is_superuser']
+KeyError: 'is_superuser'
+ERROR 2017-12-23 03:15:22,568 exception 45075 123145573044224 Internal Server Error: /api/v1/auth/users/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/auth/views.py", line 98, in create
+    self.perform_create(serializer)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/auth/serializers.py", line 22, in create
+    user.is_staff = validated_data['is_staff']
+KeyError: 'is_staff'
+ERROR 2017-12-23 06:49:18,459 exception 8404 123145523761152 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 472, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 113, in initialize_request
+    request = super(ViewSetMixin, self).initialize_request(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 373, in initialize_request
+    parsers=self.get_parsers(),
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 262, in get_parsers
+    return [parser() for parser in self.parser_classes]
+TypeError: 'type' object is not iterable
+ERROR 2017-12-23 06:49:52,758 exception 9713 123145580314624 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 472, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 113, in initialize_request
+    request = super(ViewSetMixin, self).initialize_request(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 373, in initialize_request
+    parsers=self.get_parsers(),
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 262, in get_parsers
+    return [parser() for parser in self.parser_classes]
+TypeError: 'JSONParser' object is not iterable
+ERROR 2017-12-23 06:51:11,967 exception 11531 123145547399168 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 472, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 113, in initialize_request
+    request = super(ViewSetMixin, self).initialize_request(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 373, in initialize_request
+    parsers=self.get_parsers(),
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 262, in get_parsers
+    return [parser() for parser in self.parser_classes]
+TypeError: 'type' object is not iterable
+ERROR 2017-12-23 06:51:27,408 exception 12056 123145373646848 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 472, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 113, in initialize_request
+    request = super(ViewSetMixin, self).initialize_request(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 373, in initialize_request
+    parsers=self.get_parsers(),
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 262, in get_parsers
+    return [parser() for parser in self.parser_classes]
+TypeError: 'JSONParser' object is not iterable
+ERROR 2017-12-23 07:46:39,958 exception 12585 123145587138560 Internal Server Error: /api/v1/monitor/send_code
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/monitor/send_code/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2017-12-23 07:47:56,466 exception 12585 123145587138560 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 47, in claim
+    is_validated = validate_code(request, phone_num, code)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 491, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 406, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'bool'>`
+ERROR 2017-12-23 07:49:29,418 exception 85247 123145409368064 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 44, in claim
+    is_validated = validate_code(request, phone_num, code)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 491, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 406, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'bool'>`
+ERROR 2017-12-23 07:49:41,335 exception 85247 123145409368064 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 44, in claim
+    is_validated = validate_code(request, phone_num, code)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 491, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 406, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'bool'>`
+ERROR 2017-12-23 07:49:53,962 exception 85247 123145409368064 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 44, in claim
+    is_validated = validate_code(request, phone_num, code)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 491, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 406, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'bool'>`
+ERROR 2017-12-23 07:50:06,983 exception 85247 123145409368064 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 44, in claim
+    is_validated = validate_code(request, phone_num, code)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 491, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 406, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'bool'>`
+ERROR 2017-12-23 07:52:44,144 exception 90751 123145379315712 Internal Server Error: /api/v1/monitor/dream/ba5bb6e3-53c8-4e29-b759-c594af84f35b/claim/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 61, in claim
+    yunpian_send_message(dream.contact_person.phone_number, message)
+AttributeError: 'NoneType' object has no attribute 'phone_number'
+ERROR 2017-12-23 15:55:10,091 exception 41820 123145495810048 Internal Server Error: /api/v1/monitor/upload_image/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/decorators.py", line 53, in handler
+    return func(*args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 93, in upload_image
+    file_name = scramble_uploaded_filename()
+TypeError: scramble_uploaded_filename() missing 2 required positional arguments: 'instance' and 'filename'
+ERROR 2017-12-23 15:56:01,963 exception 41820 123145495810048 Internal Server Error: /api/v1/monitor/upload_image/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/decorators.py", line 53, in handler
+    return func(*args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 93, in upload_image
+    file_name = scramble_uploaded_filename()
+TypeError: scramble_uploaded_filename() missing 2 required positional arguments: 'instance' and 'filename'
+ERROR 2017-12-23 15:56:12,030 exception 44427 123145338015744 Internal Server Error: /api/v1/monitor/upload_image/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/decorators.py", line 53, in handler
+    return func(*args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 94, in upload_image
+    new_file = open(f'static/{file_name}/', 'w')
+FileNotFoundError: [Errno 2] No such file or directory: 'static/static/photos/5d3dceb5-2dba-4efc-87f2-fcb41339b1a2.jpg/'
+ERROR 2017-12-23 16:00:58,113 exception 50930 123145404366848 Internal Server Error: /api/v1/monitor/dream
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/monitor/dream/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2017-12-23 16:10:27,085 exception 65486 123145389928448 Internal Server Error: /api/v1/monitor/upload_image/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/decorators.py", line 53, in handler
+    return func(*args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 94, in upload_image
+    img = Image.open(file).save()
+TypeError: save() missing 1 required positional argument: 'fp'
+ERROR 2017-12-23 16:12:32,368 exception 68655 123145398419456 Internal Server Error: /api/v1/monitor/upload_image/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/decorators.py", line 53, in handler
+    return func(*args, **kwargs)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/views.py", line 93, in upload_image
+    img = Image.open(file).save(f'static/photo/{file_name}')
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/PIL/Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'static/photo/static/photos/55d3eefc-db95-4a2a-9d0b-3bbafba7414f.jpg'
+ERROR 2017-12-25 12:26:40,015 exception 36993 123145414574080 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 22, in get_contact_person
+    if obj.contact_person:
+AttributeError: 'Dream' object has no attribute 'contact_person'
+ERROR 2017-12-25 12:28:15,313 exception 36993 123145414574080 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 22, in get_contact_person
+    if obj.contact_person:
+AttributeError: 'Dream' object has no attribute 'contact_person'
+ERROR 2017-12-25 12:30:09,194 exception 46935 123145516933120 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 22, in get_donors
+    donors = obj.donor.objects.all().value_list('name','phone')
+AttributeError: 'ManyRelatedManager' object has no attribute 'objects'
+ERROR 2017-12-25 12:30:20,020 exception 47206 123145344696320 Internal Server Error: /api/v1/monitor/dream/
+Traceback (most recent call last):
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/viewsets.py", line 90, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 489, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 449, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/mixins.py", line 45, in list
+    return self.get_paginated_response(serializer.data)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 738, in data
+    ret = super(ListSerializer, self).data
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 262, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 656, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/wangkai/.pyenv/versions/one-million-dream-3.6.0/lib/python3.6/site-packages/rest_framework/fields.py", line 1816, in to_representation
+    return method(value)
+  File "/Users/wangkai/Desktop/github/django-restful-scaffolding/hawkeye/api/v1/monitor/serializers.py", line 22, in get_donors
+    donors = obj.donor.all().value_list('name','phone')
+AttributeError: 'QuerySet' object has no attribute 'value_list'
