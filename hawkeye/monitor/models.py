@@ -24,9 +24,9 @@ class Dream(CoreModel):
 
     title = models.CharField(max_length=1000, blank=True, null=True)
     person_name = models.CharField(max_length=100, blank=True, null=True)
-    age = models.IntegerField(null=True)
+    # age = models.IntegerField(null=True)
     sex = models.CharField(max_length=10, blank=True, null=True)
-    person_type = models.CharField(max_length=100, blank=True, null=True)
+    # person_type = models.CharField(max_length=100, blank=True, null=True)
     reason = models.CharField(max_length=1000, blank=True, null=True)
     local = models.CharField(max_length=100, blank=True, null=True)
     contact_name = models.CharField(max_length=100, blank=True, null=True)
