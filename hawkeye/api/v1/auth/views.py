@@ -32,10 +32,10 @@ jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 jwt_response_payload_handler = api_settings.JWT_RESPONSE_PAYLOAD_HANDLER
 # just a simple wrapper with extra version parameter
 
-@api_view(['GET'])
+@api_view(['POST'])
 def test(request):
-    request.session['1'] = '1'
     return Response({'msg': 'v1 test'})
+
 
 
 def jwt_response_special_handling(response, user=None):
