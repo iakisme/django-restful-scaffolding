@@ -139,20 +139,20 @@ def export_file(request):
     worksheet.write(0, 0, '所在地')
     worksheet.write(0, 1, '姓名')
     worksheet.write(0, 2, '性别')
-    worksheet.write(0, 5, '微心愿')
-    worksheet.write(0, 6, '许愿理由')
-    worksheet.write(0, 7, '联系人')
-    worksheet.write(0, 8, '联系电话')
+    worksheet.write(0, 3, '微心愿')
+    worksheet.write(0, 4, '许愿理由')
+    worksheet.write(0, 5, '联系人')
+    worksheet.write(0, 6, '联系电话')
 
     dream_list = list(Dream.objects.filter(is_claimed=False))
     for i, dream in enumerate(dream_list):
         worksheet.write(i+1, 0, dream.local)
         worksheet.write(i+1, 1, dream.person_name)
         worksheet.write(i+1, 2, dream.sex)
-        worksheet.write(i+1, 5, dream.title)
-        worksheet.write(i+1, 6, dream.reason)
-        worksheet.write(i+1, 7, dream.contact_name)
-        worksheet.write(i+1, 8, dream.contact_phone)
+        worksheet.write(i+1, 3, dream.title)
+        worksheet.write(i+1, 4, dream.reason)
+        worksheet.write(i+1, 5, dream.contact_name)
+        worksheet.write(i+1, 6, dream.contact_phone)
         workbook.close()
         output.seek(0)
 
@@ -160,6 +160,8 @@ def export_file(request):
         response['Content-Disposition'] = 'attachment; filename="test.xlsx"'
         response.write(output.read())
         # response.write(output.read())
+        if not response:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
         return response
 
 def generate_code():
