@@ -66,7 +66,7 @@ class DreamViewSet(BulkModelViewSet):
         phone_number = dream.contact_phone
         message = f'【万人圆梦】亲爱的{full_name}，{dream.person_name}的微心愿已经被{donor_name}认领，联系方式:{phone_num}。希望您在24小时内与微心愿认领人{donor_name}取得联系，并做好对接工作。（共青团宁波市委，联系电话：89186690）'
 
-        message_to_donor = f'【万人圆梦】尊敬的{donor_name}，感谢您参与“2018年宁波市青少年万人圆梦行动微心愿认领活动”，微心愿联系人（一般为困难青少年所在的乡镇街道团干部或所在学校的老师）将会尽快与您取得联系，您也可以直接与微心愿联系人联系，共同商定圆梦方式，如您不方便亲自圆梦，可将您的爱心物资快递到微心愿联系人所在单位，由他们替您将关爱及时送到困难青少年手中。微心愿联系人：{full_name}，联系电话：{int(phone_number)}（共青团宁波市委）'
+        message_to_donor = f'【万人圆梦】尊敬的{donor_name}，您已经成功认领“2018年宁波市青少年万人圆梦行动微心愿”，微心愿联系人（一般为困难青少年所在的乡镇街道团干部或所在学校的老师）将会尽快与您取得联系，您也可以直接与微心愿联系人联系，共同商定圆梦方式，如您不方便亲自圆梦，可将您的爱心物资快递到微心愿联系人所在单位，由他们替您将关爱及时送到困难青少年手中。微心愿联系人：{full_name}，联系电话：{int(phone_number)}（共青团宁波市委）'
         yunpian_send_message(int(phone_num), message_to_donor)
         if not dream.contact_phone:
             return Response(status=status.HTTP_200_OK)
