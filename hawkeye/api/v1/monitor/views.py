@@ -123,7 +123,7 @@ def upload_file(request):
             title=row[3],
             reason=row[4],
             contact_name=row[5],
-            contact_phone=row[6]
+            contact_phone=str(int(row[6]))
         )
         dream_list.append(dream)
     Dream.objects.bulk_create(dream_list)
