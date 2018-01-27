@@ -37,7 +37,7 @@ class Dream(CoreModel):
     donor = models.ManyToManyField('Donor', null=True, blank=True)
 
     class Meta:
-        ordering = ('-is_claimed', '-created_at',)
+        ordering = ('is_claimed', '-created_at',)
 
 
 class Donor(CoreModel):
