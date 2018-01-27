@@ -36,6 +36,9 @@ class Dream(CoreModel):
     is_claimed = models.BooleanField(default=False)
     donor = models.ManyToManyField('Donor', null=True, blank=True)
 
+    class Meta:
+        ordering = ('-is_claimed', '-created_at',)
+
 
 class Donor(CoreModel):
     name = models.CharField(max_length=1000, blank=True, null=True)
