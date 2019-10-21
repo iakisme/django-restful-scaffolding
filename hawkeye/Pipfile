@@ -9,7 +9,7 @@ name = "pypi"
 
 certifi = "==2017.11.5"
 chardet = "==3.0.4"
-django = "==1.11"
+django = "==1.11.23"
 django-filter = "==1.1.0"
 django-guardian = "==1.4.9"
 django-redis = "==4.8.0"
